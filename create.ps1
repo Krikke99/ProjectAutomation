@@ -7,7 +7,6 @@ $giturl="https://github.com/Krikke99/"
 $gitext=".git"
 
 $workingdir=[Environment]::GetFolderPath('MyDocuments') + "\repos\" + $fn
-Write-Output $workingdir
 New-Item -Path $workingdir -ItemType Director
 Set-Location $workingdir
 New-Item "README.md" -ItemType File
