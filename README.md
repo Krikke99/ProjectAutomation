@@ -1,6 +1,6 @@
 # ProjectAutomation
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?label=license)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Language](https://img.shields.io/github/languages/top/krikke99/ProjectAutomation?style=flat)](https://github.com/krikke99/ProjectAutomation)
 [![Last commit](https://img.shields.io/github/last-commit/krikke99/ProjectAutomation.svg?style=flat)](https://github.com/krikke99/ProjectAutomation/commits)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/krikke99/ProjectAutomation)](https://github.com/krikke99/ProjectAutomation/commits)
