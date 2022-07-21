@@ -34,6 +34,6 @@ This script uses GitHub CLI:
 - PS>./create projectname
 - PS>./create -fn projectname -visibility 0
 - PS>./create -N projectname -U https://github.com/Krikke99/ -V 0
-- 
+
 ## License
 This project is licensed under the GPL-3.0 License - see the LICENSE.md file for details
