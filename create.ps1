@@ -2,8 +2,8 @@
 .PARAMETER fn
 Specifies the project name.
 
-.PARAMETER Visibillity
-Specifies the visibillity in Github. 1=private(default), 0=public.
+.PARAMETER visibility
+Specifies the visibility in Github. 1=private(default), 0=public.
 
 .EXAMPLE
 PS> create projectname
@@ -19,8 +19,8 @@ param (
     [Parameter(Mandatory=$true, HelpMessage="Project name")]
     [string]$fn,
     
-    [Parameter(Mandatory=$false, HelpMessage="Set repository visibillity, 0=Public 1=Private")]
-    [int]$Visibillity = 1
+    [Parameter(Mandatory=$false, HelpMessage="Set repository visibility, 0=Public 1=Private")]
+    [int]$visibility = 1
 )
 
 $giturl="https://github.com/Krikke99/"
@@ -31,10 +31,10 @@ New-Item -Path $workingdir -ItemType Director
 Set-Location $workingdir
 New-Item "README.md" -ItemType File
 git init
-if (1 -eq $Visibillity) {
+if (1 -eq $visibility) {
     gh repo create $fn --private --source=. --remote=upstream
 }
-elseif (0 -eq $Visibillity) {
+elseif (0 -eq $visibility) {
     gh repo create $fn --public --source=. --remote=upstream
 }
 gh repo create $fn --private --source=. --remote=upstream
