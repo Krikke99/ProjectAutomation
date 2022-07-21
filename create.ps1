@@ -6,10 +6,9 @@ Specifies the project name.
 Specifies the visibility in Github. 1=private(default), 0=public.
 
 .EXAMPLE
-PS> create projectname
-
-.EXAMPLE
-PS> create projectname 0
+PS>./create projectname
+PS>./create -fn projectname -visibility 0
+PS>./create -fn projectname -giturl https://github.com/Krikke99/ -visibility 0
 
 .LINK
 https://github.com/Krikke99
@@ -19,11 +18,18 @@ param (
     [Parameter(Mandatory=$true, HelpMessage="Project name")]
     [string]$fn,
     
+    [Parameter(Mandatory=$false, HelpMessage="Git url")]
+    [string]$giturl="https://github.com/Krikke99/",
+
     [Parameter(Mandatory=$false, HelpMessage="Set repository visibility, 0=Public 1=Private")]
     [int]$visibility = 1
 )
 
-$giturl="https://github.com/Krikke99/"
+If ($visibility -lt 0 -OR $visibility -gt 1)
+{
+    Throw "Error: visibility can only be 0 (public) or 1 (private)"
+}
+
 $gitext=".git"
 
 $workingdir=[Environment]::GetFolderPath('MyDocuments') + "\repos\" + $fn
@@ -37,7 +43,6 @@ if (1 -eq $visibility) {
 elseif (0 -eq $visibility) {
     gh repo create $fn --public --source=. --remote=upstream
 }
-gh repo create $fn --private --source=. --remote=upstream
 git remote add origin $giturl$fn$gitext
 git add .
 git commit -m "initial commit"
