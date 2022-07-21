@@ -20,7 +20,7 @@ Automation script to setup a project folder with git and github.
 ## Usage
 ./create -N Projectname -U https://github.com/username -V Visibility
 
-### Parameters
+## Parameters
 - -N or -fn Projectname (mandatory)
 - -U or -giturl url
 - -V or -visibility 0=public, 1=private(default) 
