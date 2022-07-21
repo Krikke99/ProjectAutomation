@@ -17,6 +17,11 @@ Automation script to setup a project folder with git and github.
 - Sync with [Github](https://github.com/)
 - opens [VSCode](https://code.visualstudio.com/)
 
+## Dependencies
+This script uses GitHub CLI:
+- [https://cli.github.com/](https://cli.github.com/)
+- [https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)
+
 ## Usage
 ./create -N Projectname -U https://github.com/username -V Visibility
 
@@ -29,14 +34,6 @@ Automation script to setup a project folder with git and github.
 - PS>./create projectname
 - PS>./create -fn projectname -visibility 0
 - PS>./create -N projectname -U https://github.com/Krikke99/ -V 0
-
-### Dependencies
-This script uses GitHub CLI:
-- [https://cli.github.com/](https://cli.github.com/)
-- [https://github.com/cli/cli#installation](https://github.com/cli/cli#installation)
-
-
-
+- 
 ## License
-
 This project is licensed under the GPL-3.0 License - see the LICENSE.md file for details
