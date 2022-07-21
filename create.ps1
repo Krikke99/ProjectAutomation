@@ -1,4 +1,10 @@
 <#
+.SYNOPSIS
+Automation script to setup a project folder with git and github.
+
+.DESCRIPTION
+
+
 .PARAMETER fn
 Specifies the project name.
 
@@ -8,19 +14,22 @@ Specifies the visibility in Github. 1=private(default), 0=public.
 .EXAMPLE
 PS>./create projectname
 PS>./create -fn projectname -visibility 0
-PS>./create -fn projectname -giturl https://github.com/Krikke99/ -visibility 0
+PS>./create -N projectname -U https://github.com/Krikke99/ -V 0
 
 .LINK
 https://github.com/Krikke99
 
 #>
 param (
+    [Alias("N")]
     [Parameter(Mandatory=$true, HelpMessage="Project name")]
     [string]$fn,
     
+    [Alias("U")]
     [Parameter(Mandatory=$false, HelpMessage="Git url")]
     [string]$giturl="https://github.com/Krikke99/",
 
+    [Alias("V")]
     [Parameter(Mandatory=$false, HelpMessage="Set repository visibility, 0=Public 1=Private")]
     [int]$visibility = 1
 )
