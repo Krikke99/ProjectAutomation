@@ -23,12 +23,14 @@ Automation script to setup a project folder with git and github.
 ### Parameters
 - -N or -fn Projectname (mandatory)
 - -U or -giturl url
-- -V or -visibility 0=public, 1=private(default) 
+- -V or -visibility 0=public, 1=private(default)
+- -P or -workingdir local path 
 
 ## Examples
 - PS>./create projectname
 - PS>./create -fn projectname -visibility 0
 - PS>./create -N projectname -U https://github.com/Krikke99/ -V 0
+- PS>./create -N projectname -U https://github.com/Krikke99/ -V 0 -P C:\Users\chris\Documents\repos
 
 ### Dependencies
 This script uses GitHub CLI:

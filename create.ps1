@@ -31,7 +31,11 @@ param (
 
     [Alias("V")]
     [Parameter(Mandatory=$false, HelpMessage="Set repository visibility, 0=Public 1=Private")]
-    [int]$visibility = 1
+    [int]$visibility = 1,
+
+    [Alias("P")]
+    [Parameter(Mandatory=$false, HelpMessage="Project path")]
+    [string]$workingdir=[Environment]::GetFolderPath('MyDocuments') + "\repos\"
 )
 
 If ($visibility -lt 0 -OR $visibility -gt 1)
@@ -39,9 +43,9 @@ If ($visibility -lt 0 -OR $visibility -gt 1)
     Throw "Error: visibility can only be 0 (public) or 1 (private)"
 }
 
+$workingdir = $workingdir + $fn
 $gitext=".git"
 
-$workingdir=[Environment]::GetFolderPath('MyDocuments') + "\repos\" + $fn
 New-Item -Path $workingdir -ItemType Director
 Set-Location $workingdir
 New-Item "README.md" -ItemType File
